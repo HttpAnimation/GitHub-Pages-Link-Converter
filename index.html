@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Pages Link Converter</title>
+  <style>
+    /* Base styles for light mode */
+    body {
+      background-color: #f7f7f7;
+      color: #333;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #333;
+      color: #f7f7f7;
+    }
+
+    /* Container styles */
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      background-color: #fff;
+    }
+
+    /* Dark mode styles for the container */
+    body.dark-mode .container {
+      background-color: #444;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Dark mode toggle button */
+    .dark-mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: transparent;
+      border: none;
+      color: #333;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .dark-mode-toggle.dark-mode {
+      color: #f7f7f7;
+    }
+  </style>
+</head>
+<body>
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+    🌙
+  </button>
+  <div class="container">
+    <h1>GitHub Pages Link Converter</h1>
+    <p>Enter the GitHub Pages link:</p>
+    <input type="text" id="githubPagesLink" placeholder="https://httpanimation.github.io/FYC-Requester/">
+    <button onclick="convertLink()">Convert</button>
+    <p>Converted link:</p>
+    <p id="convertedLink"></p>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      body.classList.toggle("dark-mode");
+    }
+
+    function convertLink() {
+      const githubPagesLink = document.getElementById("githubPagesLink").value;
+      const convertedLink = githubPagesLink.replace("https://httpanimation.github.io/", "https://github.com/");
+      document.getElementById("convertedLink").textContent = convertedLink;
+    }
+  </script>
+</body>
+</html>
