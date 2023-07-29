@@ -95,17 +95,18 @@
     <div class="converted-link" id="convertedLink"></div>
   </div>
 
-  <script>
-    function toggleDarkMode() {
-      const body = document.body;
-      body.classList.toggle("dark-mode");
-    }
+<script>
+  function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+  }
 
-    function convertLink() {
-      const githubPagesLink = document.getElementById("githubPagesLink").value;
-      const convertedLink = githubPagesLink.replace("https://httpanimation.github.io/", "https://github.com/");
-      document.getElementById("convertedLink").textContent = convertedLink;
-    }
-  </script>
+  function convertLink() {
+    const githubPagesLink = document.getElementById("githubPagesLink").value;
+    const convertedLink = githubPagesLink.replace("https://httpanimation.github.io/", "https://github.com/httpanimation/");
+    document.getElementById("convertedLink").textContent = convertedLink;
+  }
+</script>
+
 </body>
 </html>
